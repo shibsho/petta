@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-=begint    userとnoteを関連づけたらコメントアウトを外す  
+=begin   userとnoteを関連づけたらコメントアウトを外す  
   before_action :correct_user, only: [:edit, :update] 
 =end
   # GET /notes
@@ -78,9 +78,9 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:category, :content)
+      params.require(:note).permit(:category, :content, :user_id)
     end
-=begint    userとnoteを関連づけたらコメントアウトを外す
+=begin   userとnoteを関連づけたらコメントアウトを外す
     def correct_user
       note = Note.find(params[:id])
       if !current_user?(note.user)
