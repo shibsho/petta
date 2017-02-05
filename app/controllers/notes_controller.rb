@@ -28,6 +28,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    @note.user_id = current_user.id
     file = params[:note][:image]
     if !file.nil?
       file_name = file.original_filename

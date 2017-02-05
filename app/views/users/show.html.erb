@@ -2,6 +2,9 @@
 	<h3 class="user-info"><%= @user.name %></h3>
 </section>
 
+<% @notes.each do |note| %>
+	<li><%= link_to note.content, note %></li>
+<% end %>
 
 <% if current_user.id == @user.id %>
 
