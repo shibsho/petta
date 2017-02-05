@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
+  before_action :correct_user, only:[:edit,:update]
+
   def index
     @users = User.all
   end
@@ -8,9 +10,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-    
-  end
 
   def edit
     @user = User.find(params[:id])
@@ -29,13 +28,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-   
-  end
-
   private
 
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def correct_user
+      user = User.find(params[:id])
+      if current_user.id != user.id
+        redirect_to root_path
+      end
     end
 end
