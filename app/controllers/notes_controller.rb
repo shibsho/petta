@@ -25,6 +25,12 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    file = params[:note][:image]
+    if !file.nil?
+      file_name = file.original_filename
+      File.open("public/note_images/#{file_name}", 'wb'){|f| f.write(file.read)}
+      @note.image = file_name
+    end
 
     respond_to do |format|
       if @note.save
@@ -69,6 +75,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:image, :category, :content)
+      params.require(:note).permit(:category, :content)
     end
 end
