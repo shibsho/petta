@@ -83,7 +83,7 @@ class NotesController < ApplicationController
 
     def correct_user
       note = Note.find(params[:id])
-      if !current_user?(note.user)
+      if current_user.id != note.user.id
         redirect_to root_path, alert: '許可されていないページです'
       end
     end
