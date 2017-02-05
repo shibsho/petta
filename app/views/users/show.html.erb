@@ -6,7 +6,7 @@
 	<li><%= link_to note.content, note %></li>
 <% end %>
 
-<% if current_user.id == @user.id %>
+<% if current_user == @user %>
 
 	<section>
 	    <small><%= link_to 'Noteを投稿', new_note_path %></small>
