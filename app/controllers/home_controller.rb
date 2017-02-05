@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def top
-  	@users = User.all
+  	@notes = Note.all
   end
 
   def about
