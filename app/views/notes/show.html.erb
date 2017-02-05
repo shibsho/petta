@@ -15,5 +15,10 @@
   <%= @note.content %>
 </p>
 
+<p>
+  <strong>ユーザー:</strong>
+  <%= link_to @note.user.name, @note.user %>
+</p>
+
 <%= link_to 'Edit', edit_note_path(@note) %> |
 <%= link_to 'Back', notes_path %>
