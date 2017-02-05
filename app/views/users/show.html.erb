@@ -1,0 +1,13 @@
+
+
+  
+	  <section>
+	    <h3 class="user-info"><%= @user.name %></h3>
+	  </section>
+
+	  
+	  <% if current_user.id == @user.id %>
+	    <section>
+	      <small><%= link_to 'プロフィールを編集', edit_user_path(@user) %></small>
+	    </section>
+	  <% end %>
