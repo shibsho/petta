@@ -1,6 +1,9 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+=begint    userとnoteを関連づけたらコメントアウトを外す  
+  before_action :correct_user, only: [:edit, :update] 
+=end
   # GET /notes
   # GET /notes.json
   def index
@@ -77,4 +80,13 @@ class NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:category, :content)
     end
+=begint    userとnoteを関連づけたらコメントアウトを外す
+    def correct_user
+      note = Note.find(params[:id])
+      if !current_user?(note.user)
+        redirect_to root_path, alert: '許可されていないページです'
+      end
+    end
+=end
+
 end
