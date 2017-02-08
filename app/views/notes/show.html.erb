@@ -1,24 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag "/note_images/#{@note.image}" %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @note.category %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
-
-<p>
-  <strong>ユーザー:</strong>
-  <%= link_to @note.user.name, @note.user %>
-</p>
+  <div class="li note-card">
+    
+      <%= image_tag "/note_images/#{@note.image}", class: "note-image" %>
+      <li><%= @note.content %></li>
+      <li><%= @note.category %></li>
+      <li><%= link_to @note.user.name, @note.user %></li>
+    
+  </div>
 
 
 <% if current_user == @note.user%>

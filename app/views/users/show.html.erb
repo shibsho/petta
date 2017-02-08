@@ -2,18 +2,22 @@
 	<h3 class="user-info"><%= @user.name %></h3>
 </section>
 
-<% @notes.each do |note| %>
-	<li><%= link_to note.content, note %></li>
+<% if current_user.id == @user.id %>
+	<section>
+		<small><%= link_to 'Noteを投稿', new_note_path %></small>
+	</section>
 <% end %>
 
-<% if current_user.id == @user.id %>
+<section>
+	<small><%= link_to 'プロフィールを編集', edit_user_path(@user) %></small>
+</section>
 
-	<section>
-	    <small><%= link_to 'Noteを投稿', new_note_path %></small>
-	</section>
 
-	<section>
-		<small><%= link_to 'プロフィールを編集', edit_user_path(@user) %></small>
-	</section>
-
+<% @notes.each do |note| %>
+	<li>
+		<%= link_to note, class: "note-card" do %>
+			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+			<%= note.content %>
+		<% end %>
+	</li>
 <% end %>

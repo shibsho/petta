@@ -70,9 +70,36 @@ header .container{
 /* メイン部分　*/
 
 .main .container{
-	background-color: #dfdfdf;
 	
-	padding: 0px;
+	padding: 20px;
+}
+
+.main .container:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/*=== note =========================================================*/
+
+.note-image{
+	height: 150px;
+	width: 150px;
+	border-radius: 100%;
+
+}
+
+.note-card{
+	background-color: white;
+	width: 25%;
+	display: block;
+	padding: 5px 10px 3px;
+	border: solid 1px #ddd;
+	float: left;
+}
+
+.note-card:hover{
+	background-color: #f1f1f1;
 }
 
 
@@ -86,7 +113,15 @@ header .container{
 /*   スマホ向け   */
 @media (max-width: 670px) {
 
- 	
+.main .container{
+	padding: 0;
+}
+
+.note-card{
+	width: 100%;
+	padding: 5px;
+
+}
   
 }
 

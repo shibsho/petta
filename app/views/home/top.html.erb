@@ -1,5 +1,9 @@
+
 <% @notes.each do |note| %>
-	
-	<li><%= link_to note.content, note_path(note)  %></li>
-	<li><%= image_tag "/note_images/#{note.image}" %></li>
-<% end%>
+	<li>
+		<%= link_to note, class: "note-card" do %>
+			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+			<%= note.content %>
+		<% end %>
+	</li>
+<% end %>
