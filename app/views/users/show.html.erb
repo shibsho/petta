@@ -17,7 +17,7 @@
 	<li>
 		<%= link_to note, class: "note-card" do %>
 			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-			<%= note.content %>
+			<div><%= note.content %></div>
 		<% end %>
 	</li>
 <% end %>
