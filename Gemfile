@@ -7,6 +7,8 @@ end
 
 gem 'hirb'
 
+gem 'hirb-unicode'
+
 gem 'devise'
 
 
