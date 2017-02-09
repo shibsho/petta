@@ -5,6 +5,7 @@
 body {
 	  margin: 0;
 	  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+	  font-size: 12px;
 }
 
 a {
@@ -49,7 +50,7 @@ header .container{
 	background: gray;
 }
 
-/*=== ヘッダーメニュー　=============================================*/
+/* ヘッダーメニュー　*/
 
 .header-right{
 	float: right;
@@ -58,7 +59,6 @@ header .container{
 .header-menu{
 	display: inline-block;
 	height: 100%;
-	width: 200px;
 	line-height: 60px;
 	padding: 0 10px;
 	text-align: center;
@@ -67,20 +67,7 @@ header .container{
 
 .header-menu:hover{
 	background-color: gray;
-	cursor: pointer;
 }
-
-.menu-list{
-	width: 200px;
-	background-color: blue;
-	display: none;
-}
-
-.menu-list:hover{
-
-}
-
-
 
 /* メイン部分　*/
 
