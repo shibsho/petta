@@ -5,6 +5,7 @@
 body {
 	  margin: 0;
 	  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+	  font-size: 12px;
 }
 
 a {
@@ -34,13 +35,14 @@ header .container{
 /* ロゴ部分　*/
 
 .logo{
-	display: block;
+	display: inline-block;
 	width: 150px;
 	line-height: 60px;
 	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
-	float: left;
+	margin: auto;
+	
 	color: white;
 }
 
@@ -60,7 +62,7 @@ header .container{
 	line-height: 60px;
 	padding: 0 10px;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 .header-menu:hover{
@@ -87,7 +89,7 @@ header .container{
 	width: 150px;
 	border-radius: 100%;
 	border: solid 2px #fff;
-	box-shadow:  0px 0px 8px #555;
+	box-shadow:  ーpx 0px 8px #555;
 }
 
 .note-card{
