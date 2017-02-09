@@ -16,6 +16,8 @@
   		<% end %>
 	</div>
 
+	Like：<%= @note.likes.count %>
+
 
 	<% if current_user == @note.user%>
 		<%= link_to 'Edit', edit_note_path(@note) %> |

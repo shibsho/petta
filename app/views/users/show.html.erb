@@ -13,6 +13,10 @@
 
 
 
+<%= link_to @user.likes.count, like_notes_user_path(@user.id) %>個の投稿にいいね!しています
+
+
+
 <% @notes.each do |note| %>
 	<li>
 		<%= link_to note, class: "note-card" do %>
