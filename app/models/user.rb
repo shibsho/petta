@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :notes
+  has_many :likes
 end
