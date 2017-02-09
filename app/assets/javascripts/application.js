@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+ 
+ 	$("#user-name").hover(
+ 		function(){
+ 			$(".menu-list").slideDown();
+ 		},
+ 		function(){
+ 			$(".menu-list").slideUp();
+ 		}
+ 	);
+
+});
+

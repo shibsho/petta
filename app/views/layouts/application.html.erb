@@ -18,9 +18,12 @@
 		  <% if user_signed_in? %>
 		  	
 		  	<div class="header-right">
-			  	<%= link_to current_user.name, user_path(current_user.id), class: "header-menu" %>
-			  	<%= link_to 'プロフィール変更', edit_user_registration_path, class: "header-menu" %>
-			  	<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-menu" %>
+			  	<div id="user-name" class="header-menu"><%= current_user.name%></div>
+			  	<div class="menu-list">
+				  	<%= link_to 'マイページ', user_path(current_user.id), class: "header-menu" %>
+				  	<%= link_to 'アカウント設定', edit_user_registration_path, class: "header-menu" %>
+				  	<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-menu" %>
+			  	</div>
 		  	</div>
 		  
 		  <% else %>
