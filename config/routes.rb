@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
  	resources :notes
  	devise_for :users
- 	resources :users
+ 	resources :users, only: [:index, :show, :edit, :update] do
+ 		member do
+ 			get :like_notes
+ 		end
+ 	end
 
   	root 'home#top'
 

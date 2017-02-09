@@ -13,5 +13,9 @@ class LikesController < ApplicationController
 		like.destroy
 		redirect_to note
 	end
+
+	def like_notes
+		
+	end
 	
 end
