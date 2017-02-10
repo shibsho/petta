@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-	<p><%= @title %></p>
-  	<div class="li note-card">
+	
+  	<div class="note-card">
      	<%= image_tag "/note_images/#{@note.image}", class: "note-image" %>
      	<li><%= @note.content %></li>
      	<li><%= @note.category %></li>
@@ -10,9 +10,13 @@
   
   	<div>
   		<% if current_user.likes.find_by(note_id: @note.id) %>
-    		<%= link_to 'お気に入り！を取り消す', unlike_path(@note.id), method: :delete %>
+    		<%= link_to unlike_path(@note.id), method: :delete do %>
+    			<%= image_tag "red-heart.png" %>
+    		<% end %>
   		<% else %>
-  			<%= link_to 'お気に入り！', like_path(@note.id), method: :post %>
+  			<%= link_to like_path(@note.id), method: :post do %>
+    			<%= image_tag "gray-heart.png" %>
+    		<% end %>
   		<% end %>
 	</div>
 
