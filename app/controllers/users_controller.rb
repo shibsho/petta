@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @notes = @user.notes
+    @title = "の投稿一覧"
   end
 
 
@@ -27,6 +28,13 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def like_notes
+    @user = User.find(params[:id])
+    @notes = @user.like_notes
+    @title = "のお気に入り一覧"
+    render :show
   end
 
   private

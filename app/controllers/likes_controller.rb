@@ -14,8 +14,6 @@ class LikesController < ApplicationController
 		redirect_to note
 	end
 
-	def like_notes
-		
-	end
+	
 	
 end
