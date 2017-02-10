@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @notes = @user.notes
     @title = "の投稿一覧"
+    @categorytitle = "日常"
   end
 
 
