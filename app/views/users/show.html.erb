@@ -8,41 +8,26 @@
 	</section>
 <% end %>
 
+<%= render 'notes'%>
 
-<h1><%= @user.name + @title %></h1>
-<%= link_to @user.likes.count, like_notes_user_path(@user.id) %>個の投稿にいいね!しています
-
-
-
-<% @notes.each do |note| %>
-	<li>
-		<%= link_to note, class: "note-card" do %>
-			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-			<div><%= note.content %></div>
-		<% end %>
-	</li>
-<% end %>
-
-
-<div style=" clear:both; ">
-	
+<div style=" clear:both;">
 	<h1>カテゴリーごとの表示</h1>
 	<% @category_title.each do |category_title| %>
-		
-		<h1><%= category_title %></h1>
-		
-		<% @notes.each do |note| %>
-			<% if note.category == category_title %>
-				<li>
-					<%= link_to note, class: "note-card" do %>
-						<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-						<div><%= note.content %></div>
-					<% end %>
-				</li>
+		<div style=" background-color:gray; height:500px;">
+			<h1><%= category_title %></h1>
+			<% @notes.each do |note| %>
+				<% if note.category == category_title %>
+					<li>
+						<%= link_to note, class: "note-card" do %>
+							<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+							<div><%= note.content %></div>
+						<% end %>
+					</li>
+				<% end %>
 			<% end %>
-
+		</div>
 	<% end %>
 </div>
-<% end %>
+
 
 
