@@ -1,0 +1,17 @@
+
+
+
+
+<h1><%= @user.name + @title %></h1>
+<%= link_to @user.likes.count, like_notes_user_path(@user.id) %>個の投稿にいいね!しています
+
+
+
+<% @notes.each do |note| %>
+	<li>
+		<%= link_to note, class: "note-card" do %>
+			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+			<div><%= note.content %></div>
+		<% end %>
+	</li>
+<% end %>
