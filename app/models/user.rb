@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true
 
-  has_many :notes
+  has_many :notes, dependent: :destroy
   has_many :likes
   has_many :like_notes, through: :likes, source: :note
 end
