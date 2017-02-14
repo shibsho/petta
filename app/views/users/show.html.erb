@@ -12,6 +12,7 @@
 
 <div style=" clear:both;">
 	<h1>カテゴリーごとの表示</h1>
+
 	<% @category_title.each do |category_title| #category_titleにカテゴリー名を順番に入れる　%>
 		<div style="height:400px;">
 			<% if @user.notes.find_by(category: category_title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
