@@ -34,15 +34,10 @@ class NotesController < ApplicationController
       File.open("public/note_images/#{file_name}", 'wb'){|f| f.write(file.read)}
       @note.image = file_name
     end
-
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to @note, notice: '投稿しました！' }
-        format.json { render :show, status: :created, location: @note }
-      else
-        format.html { render :new }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+    if @note.save
+      redirect_to @note, notice: '投稿しました！'
+    else
+      render :new
     end
   end
 
@@ -64,10 +59,7 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     @note.destroy
-    respond_to do |format|
-      format.html { redirect_to notes_url, notice: '削除されました' }
-      format.json { head :no_content }
-    end
+    redirect_to current_user, notice: '削除しました'
   end
 
   private

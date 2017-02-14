@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 	
   	<div class="note-card">
      	<%= image_tag "/note_images/#{@note.image}", class: "note-image" %>
@@ -11,19 +10,18 @@
   	<div>
   		<% if current_user.likes.find_by(note_id: @note.id) %>
     		<%= link_to unlike_path(@note.id), method: :delete do %>
-    			<%= image_tag "red-heart.png" %>
+    			<%= image_tag "red-heart.png" %>×<%= @note.likes.count %>
     		<% end %>
   		<% else %>
   			<%= link_to like_path(@note.id), method: :post do %>
-    			<%= image_tag "gray-heart.png" %>
+    			<%= image_tag "gray-heart.png" %>×<%= @note.likes.count %>
     		<% end %>
   		<% end %>
     </div>
 
-	Like：<%= @note.likes.count %>
-
 
 	<% if current_user == @note.user%>
-		<%= link_to 'Edit', edit_note_path(@note) %> |
-		<%= link_to 'Back', notes_path %>
+		<%= link_to '編集', edit_note_path(@note) %> |
+		<%= link_to '戻る', notes_path %>
+    <p><%= link_to "削除", note_path(@note), method: :delete %></p>
 	<%end%>
