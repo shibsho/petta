@@ -6,6 +6,7 @@ body {
 	  margin: 0;
 	  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
 	  font-size: 12px;
+	  color: #002e4e;
 }
 
 a {
@@ -121,7 +122,6 @@ header .container{
 }
 
 .fav-link{
-	color: #002e4e;
 	border: solid 1px #002e4e;
 	padding: 5px;
 	border-radius: 3px;
