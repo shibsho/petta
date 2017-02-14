@@ -12,25 +12,24 @@
 
 <div style=" clear:both;">
 	<h1>カテゴリーごとの表示</h1>
-		<% @category_title.each do |category_title| #category_titleにカテゴリー名を順番に入れる　%>
-			<div style="height:400px;">
-				<% if current_user.notes.find_by(category: category_title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
-					<h1><%= category_title %></h1>
-					<% @notes.each do |note| #noteにNoteインスタンスを一つずつ代入 %>
-						<% if note.category == category_title #Noteのカテゴリー名＝現在のカテゴリータイトルの場合のみ以下を実行 %>
-							<li>
-								<%= link_to note, class: "note-card" do %>
-									<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-									<div><%= note.content %></div>
-								<% end %>
-							</li>
+	<% @category_title.each do |category_title| #category_titleにカテゴリー名を順番に入れる　%>
+		<div style="height:400px;">
+			<% if @user.notes.find_by(category: category_title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
+				<h1><%= category_title %></h1>
+				<% notes = @user.notes.where(category: category_title) %>
+				<% notes.each do |note| #noteにNoteインスタンスを一つずつ代入 %>
+					<li>
+						<%= link_to note, class: "note-card" do %>
+							<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+							<div><%= note.content %></div>
 						<% end %>
-					<% end %>
-				<% else #ユーザーがそのカテゴリー名のデータを持っていなかった場合 %>
-					<h1><%= category_title %></h1>
-					<p>まだ<%= category_title %>の投稿はありません</p>
+					</li>
 				<% end %>
-			</div>	
-		<% end %>
+			<% else #ユーザーがそのカテゴリー名のデータを持っていなかった場合 %>
+				<h1><%= category_title %></h1>
+				<p>まだ<%= category_title %>の投稿はありません</p>
+			<% end %>
+		</div>	
+	<% end %>
 </div>
 
