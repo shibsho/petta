@@ -111,6 +111,21 @@ header .container{
 	background-color: #f1f1f1;
 }
 
+/*=== user =========================================================*/
+
+.ctg-name{
+	border-bottom: solid 1px #aaaaaa;
+	color: #3366cc;
+	padding: 5px;
+	border-radius: 7px 7px 0 0;
+}
+
+.fav-link{
+	color: #002e4e;
+	border: solid 1px #002e4e;
+	padding: 5px;
+	border-radius: 3px;
+}
 
 /*---------------------------メディアクエリ---------------------------*/
 
