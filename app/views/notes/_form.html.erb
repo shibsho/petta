@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :画像 %>
-    <%= f.file_field :image %>
-  </div>
+  <table>
+    <tr>
+      <td><%= f.label :画像 %></td>
+      <td><%= f.file_field :image %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :カテゴリを選択 %></td>
+      <td><%= f.text_field :category %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :コメント %></td>
+      <td><%= f.text_field :content %></td>
+    </tr>
+  </table>
 
-  <div class="field">
-    <%= f.label :カテゴリを選択 %>
-    <%= f.text_field :category %>
-  </div>
 
-  <div class="field">
-    <%= f.label :コメント %>
-    <%= f.text_field :content %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
