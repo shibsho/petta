@@ -17,15 +17,15 @@
       <td><%= f.file_field :image %></td>
     </tr>
     <tr>
-      <td><%= f.label :カテゴリを選択 %></td>
-      <td><%= f.text_field :category %></td>
+      <td><%= f.label :カテゴリー %></td>
+      <td><%= f.collection_select :category, Note.all, :category, :category %></td>
     </tr>
     <tr>
       <td><%= f.label :コメント %></td>
       <td><%= f.text_field :content %></td>
     </tr>
   </table>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
