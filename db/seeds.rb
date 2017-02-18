@@ -6,12 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # coding: utf-8
+
 Category.create(:title => '日常')
 Category.create(:title => 'さんぽ')
 Category.create(:title => 'ごはん')
+Category.create(:title => '旅行')
+Category.create(:title => 'ドッグラン')
+Category.create(:title => '初体験')
 Category.create(:title => 'ケガ・病気')
 Category.create(:title => '介護')
-Category.create(:title => 'ドッグラン')
-Category.create(:title => '旅行')
+
+
 
 

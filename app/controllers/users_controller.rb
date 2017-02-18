@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @notes = @user.notes
     @title = "の投稿一覧"
-    @category_title = ["日常","さんぽ","ごはん","あそび"]
+    @categories = Category.all
   end
 
 
