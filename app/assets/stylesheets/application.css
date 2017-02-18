@@ -190,7 +190,7 @@ header .container{
 }
 
 /*   スマホ向け   */
-@media (max-width: 900px) {
+@media (max-width: 670px) {
 
 	.main .container{
 		padding: 3px;
