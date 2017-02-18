@@ -1,9 +1,4 @@
 
-<div class="profile-area">
-	<h1><%= @user.name %></h1>
-	<div><%= link_to "#{@user.likes.count}個のお気に入り", like_notes_user_path(@user.id), class: "fav-link" %></div>
-</div>
-
 
 <h1><%= @title %></h1>
 <% @notes.each do |note| %>

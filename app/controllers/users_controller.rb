@@ -31,13 +31,13 @@ class UsersController < ApplicationController
   def like_notes
     @notes = @user.like_notes
     @title = "お気に入り"
-    @category_title = ["日常","さんぽ"]
+    @categories = Category.all
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :introduction)
     end
 
     def set_user

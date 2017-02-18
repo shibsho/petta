@@ -109,6 +109,10 @@ header .container{
 
 /*=== user =========================================================*/
 
+.profile-area{
+	background-color: #ccc;
+}
+
 .note-post-btn{
 	color: #fff;
 	background-color: #4477dd;
@@ -119,7 +123,7 @@ header .container{
 	display: block;
 	text-shadow: 0px 1px 0px #4f4f4f;
 	position: fixed;
-	right: 7%;
+	right: 10%;
 }
 .note-post-btn:hover{
 	background-color: #3366cc;
