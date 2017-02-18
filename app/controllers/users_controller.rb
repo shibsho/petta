@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @notes = @user.notes
-    @title = "の投稿一覧"
+    @title = "Notes"
     @categories = Category.all
   end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def like_notes
     @notes = @user.like_notes
-    @title = "のお気に入り一覧"
+    @title = "お気に入り"
     @category_title = ["日常","さんぽ"]
   end
 
