@@ -26,7 +26,8 @@ li {
 /*----- ヘッダー -----*/
 
 header{
-	background-color: #ccc;
+	background-color: #cdcdcd;
+	box-shadow: 0 0px 7px #676767;
 }
 
 header .container{
@@ -42,13 +43,7 @@ header .container{
 	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
-	margin: auto;
-	
-	color: white;
-}
-
-.logo:hover{
-	background: gray;
+	color: #fff;
 }
 
 /* ヘッダーメニュー　*/
@@ -67,7 +62,7 @@ header .container{
 }
 
 .header-menu:hover{
-	background-color: gray;
+	box-shadow: 0 1px 5px #999;
 }
 
 /* メイン部分　*/
@@ -114,17 +109,64 @@ header .container{
 
 /*=== user =========================================================*/
 
+.profile-area{
+	background-color: #f9f9f9;
+	border: solid 1px #ccc;
+	box-shadow: 0 1px 0px #ccc;
+	border-radius: 3px;
+	padding: 8px;
+}
+
+.profile-area div{
+	margin-bottom: 10px;
+}
+
+.profile-area h1{
+	margin: 3px 0;
+}
+.profile-area .name{
+	color: #333355;
+}
+.profile-area .name:hover{
+	text-decoration: underline;
+}
+
+.introduction-area{
+	padding: 5px 10px;
+}
+
+.fav-link{
+	border: solid 1px #ccc;
+	padding: 5px;
+	border-radius: 3px;
+}
+.fav-link:hover{
+	border: solid 1px #aaa;
+}
+
+.edit-prof-btn{
+	float: right;
+	margin-right: 20px;
+}
+
+.edit-prof-btn-container:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
 .note-post-btn{
 	color: #fff;
 	background-color: #4477dd;
 	width: 80px;
+	margin-top: 10px;
 	padding: 7px;
 	border-radius: 30px;
 	text-align: center;
 	display: block;
-	text-shadow: 0px 1px 0px #666;
+	text-shadow: 0px 1px 0px #4f4f4f;
 	position: fixed;
-	right: 7%;
+	right: 12%;
 }
 .note-post-btn:hover{
 	background-color: #3366cc;
@@ -135,19 +177,11 @@ header .container{
 	top: 2px;
 }
 
+
 .ctg-name{
 	border-bottom: solid 1px #aaaaaa;
 	padding: 5px;
 	border-radius: 7px 7px 0 0;
-}
-
-.fav-link{
-	border: solid 1px #668faf;
-	padding: 5px;
-	border-radius: 3px;
-}
-.fav-link:hover{
-	border: solid 1px #112e4e;
 }
 
 /*---------------------------メディアクエリ---------------------------*/
@@ -161,7 +195,7 @@ header .container{
 @media (max-width: 670px) {
 
 	.main .container{
-		padding: 0;
+		padding: 3px;
 	}
 
 	.note-card{
@@ -169,6 +203,9 @@ header .container{
 		padding: 5px;
 	}
 /*=== user =========================================================*/
+	.profile-area{
+		margin: 10px 0;
+	}
 
 	.note-post-btn{
 		width: 60%;

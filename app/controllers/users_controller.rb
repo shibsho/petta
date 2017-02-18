@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @notes = @user.notes
-    @title = "の投稿一覧"
+    @title = "Notes"
     @categories = Category.all
   end
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if  @user.update(user_params)
-      redirect_to @user, notice: 'ユーザー情報が更新されました'
+      redirect_to @user, notice: 'プロフィールが更新されました'
     else
       render :edit
     end
@@ -30,14 +30,14 @@ class UsersController < ApplicationController
 
   def like_notes
     @notes = @user.like_notes
-    @title = "のお気に入り一覧"
-    @category_title = ["日常","さんぽ"]
+    @title = "お気に入り"
+    @categories = Category.all
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :introduction)
     end
 
     def set_user

@@ -1,16 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<% if current_user.id == @user.id %>
-	<%= link_to new_note_path, class: "note-post-btn" do %>
-		<%= image_tag "post-note.png", class: "post-note-icon" %>
-		Note
-	<% end %>
-	<div><%= link_to 'プロフィールを編集', edit_user_path(@user) %></div>
-<% end %>
+
+<%= render 'profile' %>
+
 
 <%= render 'notes'%>
 
-<div style=" clear:both;">
+<div style=" clear:both;" class= "category-area">
 
 	<% @categories.each do |category| #category_titleにカテゴリー名を順番に入れる　%>
 		<div style="height:400px;">

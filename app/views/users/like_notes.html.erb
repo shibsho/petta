@@ -1,11 +1,6 @@
-<% if current_user.id == @user.id %>
-	<section>
-		<small><%= link_to 'Noteを投稿', new_note_path %></small>
-	</section>
-	<section>
-		<small><%= link_to 'プロフィールを編集', edit_user_path(@user) %></small>
-	</section>
-<% end %>
+<%= render 'profile' %>
 
 
 <%= render 'notes' %>
+
+

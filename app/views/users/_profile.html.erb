@@ -1,0 +1,16 @@
+<div class="profile-area">
+	<h1><%= link_to @user.name, @user, class: "name" %></h1>
+	<div class="introduction-area"><%= @user.introduction %></div>
+	<div><%= link_to "#{@user.likes.count}個のお気に入り", like_notes_user_path(@user.id), class: "fav-link" %></div>
+	<div class="edit-prof-btn-container">
+		<% if current_user.id == @user.id %>
+			<div><%= link_to 'プロフィールを編集', edit_user_path(@user), class: "edit-prof-btn" %></div>
+		<% end %>
+	</div>
+</div>
+
+<!-- ノート投稿ボタン -->
+<%= link_to new_note_path, class: "note-post-btn" do %>
+	<%= image_tag "post-note.png", class: "post-note-icon" %>
+	Note
+<% end %>
