@@ -119,10 +119,12 @@ header .container{
 	background-color: #4477dd;
 	width: 80px;
 	padding: 7px;
-	border-radius: 5px;
+	border-radius: 50px;
 	text-align: center;
 	display: block;
 	text-shadow: 0px 1px 0px #666;
+	position: fixed;
+	right: 7%;
 }
 .note-post-btn:hover{
 	background-color: #3366cc;
@@ -169,8 +171,12 @@ header .container{
 /*=== user =========================================================*/
 
 	.note-post-btn{
-		width: 70%;
+		width: 60%;
 		margin: auto;
+		position: fixed;
+		bottom: 7px;
+		right: 0;
+		left: 0;
 	}
 
   
