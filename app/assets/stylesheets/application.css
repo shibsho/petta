@@ -26,7 +26,8 @@ li {
 /*----- ヘッダー -----*/
 
 header{
-	background-color: #ccc;
+	background-color: #cdcdcd;
+	box-shadow: 0 0px 7px #676767;
 }
 
 header .container{
@@ -42,13 +43,7 @@ header .container{
 	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
-	margin: auto;
-	
-	color: white;
-}
-
-.logo:hover{
-	background: gray;
+	color: #fff;
 }
 
 /* ヘッダーメニュー　*/
@@ -67,7 +62,7 @@ header .container{
 }
 
 .header-menu:hover{
-	background-color: gray;
+	box-shadow: 0 1px 5px #999;
 }
 
 /* メイン部分　*/
@@ -122,7 +117,7 @@ header .container{
 	border-radius: 30px;
 	text-align: center;
 	display: block;
-	text-shadow: 0px 1px 0px #666;
+	text-shadow: 0px 1px 0px #4f4f4f;
 	position: fixed;
 	right: 7%;
 }
