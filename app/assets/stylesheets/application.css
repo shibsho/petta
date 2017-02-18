@@ -99,10 +99,11 @@ header .container{
 
 
 .note-card-category{
-	width: 50%;
+	width: 35%;
 	margin: auto;
 	color: #fff;
 	background-color: #ff3300;
+	border-radius: 4px;
 }
 
 
