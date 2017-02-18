@@ -26,7 +26,6 @@ li {
 /*----- ヘッダー -----*/
 
 header{
-	background-color: #cdcdcd;
 	box-shadow: 0 0px 7px #676767;
 }
 
@@ -43,7 +42,6 @@ header .container{
 	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
-	color: #fff;
 }
 
 /* ヘッダーメニュー　*/
