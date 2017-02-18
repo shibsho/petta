@@ -11,11 +11,12 @@
 <%= render 'notes'%>
 
 <div style=" clear:both;">
-	<% @category_title.each do |category_title| #category_titleにカテゴリー名を順番に入れる　%>
+
+	<% @categories.each do |category| #category_titleにカテゴリー名を順番に入れる　%>
 		<div style="height:400px;">
-			<% if @user.notes.find_by(category: category_title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
-				<p class="ctg-name"><%= category_title %></p>
-				<% notes = @user.notes.where(category: category_title) %>
+			<p class="ctg-name"><%= category.title %></p>
+			<% if @user.notes.find_by(category: category.title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
+				<% notes = @user.notes.where(category: category.title) %>
 				<% notes.each do |note| #noteにNoteインスタンスを一つずつ代入 %>
 					<li>
 						<%= link_to note, class: "note-card" do %>
@@ -25,8 +26,7 @@
 					</li>
 				<% end %>
 			<% else #ユーザーがそのカテゴリー名のデータを持っていなかった場合 %>
-				<p class="ctg-name"><%= category_title %></p>
-				<p>まだ<%= category_title %>の投稿はありません</p>
+				<p>まだ<%= category.title %>の投稿はありません</p>
 			<% end %>
 		</div>	
 	<% end %>

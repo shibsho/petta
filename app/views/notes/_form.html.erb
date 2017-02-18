@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <td><%= f.label :カテゴリー %></td>
-      <td><%= f.collection_select :category, Note.all, :category, :category %></td>
+      <td><%= f.collection_select :category, Category.all, :title, :title %></td>
     </tr>
     <tr>
       <td><%= f.label :コメント %></td>
