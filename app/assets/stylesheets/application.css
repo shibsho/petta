@@ -95,9 +95,11 @@ header .container{
 	float: left;
 }
 
-.note-card-content{
-	width: 90%;
+.note-card-category{
+	width: 50%;
 	margin: auto;
+	color: #fff;
+	background-color: #ff3300;
 }
 
 .note-card:hover{
