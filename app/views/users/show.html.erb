@@ -10,8 +10,8 @@
 
 	<% @categories.each do |category| #category_titleにカテゴリー名を順番に入れる　%>
 		<div style="height:400px;">
-			<p class="ctg-name"><%= category.title %></p>
 			<% if @user.notes.find_by(category: category.title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
+				<p class="ctg-name"><%= category.title %></p>
 				<% notes = @user.notes.where(category: category.title) %>
 				<% notes.each do |note| #noteにNoteインスタンスを一つずつ代入 %>
 					<li>
@@ -21,8 +21,6 @@
 						<% end %>
 					</li>
 				<% end %>
-			<% else #ユーザーがそのカテゴリー名のデータを持っていなかった場合 %>
-				<p>まだ<%= category.title %>の投稿はありません</p>
 			<% end %>
 		</div>	
 	<% end %>

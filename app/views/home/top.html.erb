@@ -3,7 +3,7 @@
 	<li>
 		<%= link_to note, class: "note-card" do %>
 			<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-			<div class="note-card-content"><%= note.content %></div>
+			<div class="note-card-category"><%= note.category %></div>
 		<% end %>
 	</li>
 <% end %>
