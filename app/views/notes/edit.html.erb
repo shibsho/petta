@@ -1,6 +1,35 @@
-<h1>Editing Note</h1>
+<h1>Noteを編集</h1>
 
-<%= render 'form', note: @note %>
+<% note = @note %>
+<%= form_for(note) do |f| %>
+  <% if note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(note.errors.count, "エラー") %> prohibited this note from being saved:</h2>
 
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+      <ul>
+      <% note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td><%= f.label :カテゴリー %></td>
+      <td><%= f.collection_select :category, Category.all, :title, :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :コメント %></td>
+      <td><%= f.text_field :content %></td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+
+<%= link_to 'Show', @note %>
