@@ -154,7 +154,6 @@ header .container{
 	height: 300px;
 	width: 300px;
 	float: left;
-	background-color: blue;
 	border-radius: 0;
 }
 
@@ -235,15 +234,13 @@ header .container{
 
 /*  sign_in sign_up 画面 */
 .user-form{
-	background-color: #ccc;
 	text-align: center;
 }
 
 .input-form{
-	background-color: yellow;
+	width: 50%;
 	margin: auto;
 	text-align: left;
-	width: 50%;
 }
 .input-form table{
 	width: 70%;
@@ -292,6 +289,15 @@ header .container{
 /*=== user =========================================================*/
 	.profile-area{
 		margin: 10px 0;
+	}
+
+
+/*  sign_in sign_up 画面 */
+	.input-form{
+		width: 100%;
+	}
+	.input-form table{
+		width: 100%;
 	}
 
   
