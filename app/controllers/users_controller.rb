@@ -3,12 +3,9 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [ :edit, :update]
   before_action :set_user, only: [ :show, :edit, :update, :like_notes ]
 
-  def index
-    @users = User.all
-  end
 
   def show
-    @notes = @user.notes
+    @notes = @user.notes.order(created_at: :desc)
     @title = "Notes"
     @categories = Category.all
   end
@@ -29,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def like_notes
-    @notes = @user.like_notes
+    @notes = @user.like_notes.order(created_at: :desc)
     @title = "お気に入り"
     @categories = Category.all
   end
