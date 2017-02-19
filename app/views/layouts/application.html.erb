@@ -17,6 +17,11 @@
 		  <% if user_signed_in? %>
 		  	
 		  	<div class="header-right">
+		  		<!-- ノート投稿ボタン -->
+				<%= link_to new_note_path, class: "note-post-btn header-menu" do %>
+					<%= image_tag "post-note.png", class: "post-note-icon" %>
+					Note
+				<% end %>
 			  	<%= link_to current_user.name, user_path(current_user.id), class: "header-menu" %>
 			  	<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-menu" %>
 		  	</div>
@@ -40,6 +45,7 @@
 
 		</div>
 	</div>
+
 
 
     <footer>
