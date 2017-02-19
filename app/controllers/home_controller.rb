@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def top
-  	@notes = Note.all
+  	@notes = Note.all.order(created_at: :desc)
   end
 
   def about
