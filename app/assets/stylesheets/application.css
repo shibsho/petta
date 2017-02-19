@@ -207,15 +207,26 @@ header .container{
 }
 
 
-
-
-.ctg-name{
-	border-bottom: solid 1px #aaaaaa;
-	padding: 5px;
-	border-radius: 7px 7px 0 0;
+/*  sign_in sign_up 画面 */
+.user-form{
+	background-color: #ccc;
+	text-align: center;
 }
 
+.input-form{
+	background-color: yellow;
+	margin: auto;
+	text-align: left;
+	width: 50%;
+}
+.input-form table{
+	width: 70%;
+	margin: auto;
+}
 
+.actions{
+	text-align: center;
+}
 
 /*---------------------------メディアクエリ---------------------------------------------------------------*/
 
