@@ -10,12 +10,9 @@
 Category.create(:title => '日常')
 Category.create(:title => 'さんぽ')
 Category.create(:title => 'ごはん')
+Category.create(:title => 'あそび')
+Category.create(:title => '睡眠')
 Category.create(:title => '旅行')
-Category.create(:title => 'ドッグラン')
 Category.create(:title => '初体験')
 Category.create(:title => 'ケガ・病気')
 Category.create(:title => '介護')
-
-
-
-
