@@ -26,7 +26,7 @@ li {
 /*----- ヘッダー -----*/
 
 header{
-	box-shadow: 0 0px 7px #676767;
+	box-shadow: 0 0px 4px #676767;
 }
 
 header .container{
@@ -61,6 +61,23 @@ header .container{
 
 .header-menu:hover{
 	box-shadow: 0 1px 5px #999;
+}
+
+.note-post-btn{
+	color: #fff;
+	background-color: #4477dd;
+	width: 80px;	
+	text-align: center;
+	display: inline-block;
+	text-shadow: 0px 1px 0px #4f4f4f;	
+}
+.note-post-btn:hover{
+	background-color: #3366cc;
+}
+
+.post-note-icon{
+	position: relative;
+	top: 2px;
 }
 
 /* メイン部分　*/
@@ -99,10 +116,11 @@ header .container{
 
 
 .note-card-category{
-	width: 50%;
+	width: 35%;
 	margin: auto;
 	color: #fff;
 	background-color: #ff3300;
+	border-radius: 4px;
 }
 
 
@@ -152,27 +170,7 @@ header .container{
 	display: block;
 }
 
-.note-post-btn{
-	color: #fff;
-	background-color: #4477dd;
-	width: 80px;
-	margin-top: 10px;
-	padding: 7px;
-	border-radius: 30px;
-	text-align: center;
-	display: block;
-	text-shadow: 0px 1px 0px #4f4f4f;
-	position: fixed;
-	right: 12%;
-}
-.note-post-btn:hover{
-	background-color: #3366cc;
-}
 
-.post-note-icon{
-	position: relative;
-	top: 2px;
-}
 
 
 .ctg-name{
@@ -212,11 +210,14 @@ header .container{
 
 	.note-post-btn{
 		width: 60%;
+		height: auto;
 		margin: auto;
+		display: block;
 		position: fixed;
 		bottom: 7px;
 		right: 0;
 		left: 0;
+		border-radius: 30px;
 	}
 
   
