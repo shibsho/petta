@@ -269,6 +269,13 @@ header .container{
 		padding: 3px;
 	}
 
+/*  about */
+	.about{
+		width: 100%;
+	}
+
+
+
 	.note-post-btn{
 		width: 60%;
 		height: auto;
