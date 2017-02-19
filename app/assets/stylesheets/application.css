@@ -114,10 +114,46 @@ header .container{
 	box-shadow: 0 0 7px 1px #ddd;
 }
 
+.note-container{
+	background-color: #f8f8f8;
+	padding: 7px;
+	height: auto;
+}
+.note-container:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.note-container .note-image{
+	height: 300px;
+	width: 300px;
+	float: left;
+	background-color: blue;
+	border-radius: 0;
+}
 
-.note-card-category{
-	width: 35%;
+.note-info{
+	padding: 10px;
+	float: left;
+	position: relative;
+	height: 300px;
+}
+.note-container .note-category{
+	margin-left: 0;
+}
+.note-content{
+	padding: 10px;
+	font-size: 17px;
+}
+.note-user{
+	position: absolute;
+	bottom: 0;
+}
+
+.note-category{
+	width: 50px;
 	margin: auto;
+	text-align: center;
 	color: #fff;
 	background-color: #ff3300;
 	border-radius: 4px;

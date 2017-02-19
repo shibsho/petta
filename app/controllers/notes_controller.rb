@@ -3,12 +3,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update] 
 
-  # GET /notes
-  # GET /notes.json
-  def index
-    @notes = Note.all
-  end
-
+  
   # GET /notes/1
   # GET /notes/1.json
   def show
