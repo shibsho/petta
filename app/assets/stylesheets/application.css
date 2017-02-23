@@ -122,8 +122,8 @@ header .container{
 /*=== note =========================================================*/
 
 .note-image{
-	height: 150px;
-	width: 150px;
+	max-width: 100%;
+	max-height: 100%;
 	border-radius: 100%;
 	border: solid 2px #fff;
 	box-shadow:  0 0 1px 1px #aaa;
@@ -151,8 +151,8 @@ header .container{
 	clear: both;
 }
 .note-container .note-image{
-	height: 300px;
-	width: 300px;
+	max-width: 400px;
+	height: auto;
 	float: left;
 	border-radius: 0;
 }
