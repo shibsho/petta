@@ -8,6 +8,7 @@ Rails.application.routes.draw do
  	end
 
   	root 'home#top'
+  	post '/' => 'home#search', as: 'search'
 
   	get '/about' => 'home#about'
 
