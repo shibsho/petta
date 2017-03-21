@@ -1,3 +1,14 @@
+<div class="search">
+	<p>カテゴリーごとの検索</p>
+	<div>
+		<%= form_tag category_path(:category_id), method: 'get' do %>
+			<%= select_tag :category, options_from_collection_for_select( Category.all,:title,:title) %>
+			<input type="submit" value="検索" >
+		<% end %>
+	</div>
+</div>
+
+
 
 <% @notes.each do |note| %>
 	<li>
@@ -7,3 +18,5 @@
 		<% end %>
 	</li>
 <% end %>
+
+
