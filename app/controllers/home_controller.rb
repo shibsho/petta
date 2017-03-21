@@ -6,7 +6,8 @@ class HomeController < ApplicationController
 
  #POST root
   def search
-  	redirect_to root_path
+  	@category = params[:category]
+    @notes = Note.where(category: @category)
   end
 
  

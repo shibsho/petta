@@ -7,10 +7,11 @@ Rails.application.routes.draw do
  		end
  	end
 
-  	root 'home#top'
-  	post '/' => 'home#search', as: 'search'
+  root 'home#top'
+  
+  get '/search/:category_id' => 'home#search', as: 'category'
 
-  	get '/about' => 'home#about'
+  get '/about' => 'home#about'
 
 	post '/like/:note_id' => 'likes#like', as: 'like'
 
