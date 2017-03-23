@@ -1,7 +1,7 @@
 <div class="search">
 	<p>カテゴリーごとの検索</p>
 	<div>
-		<%= form_tag category_path, method: 'get' do %>
+		<%= form_tag search_notes_path, method: 'get' do %> 
 			<%= select_tag :category, options_from_collection_for_select(Category.all,:title,:title) %>
 			<input type="submit" value="検索" >
 		<% end %>

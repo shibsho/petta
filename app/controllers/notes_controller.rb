@@ -56,6 +56,12 @@ class NotesController < ApplicationController
     redirect_to current_user, notice: '削除しました'
   end
 
+  def search
+    @category_title = params[:category]
+    @notes = Note.where(category: @category_title).order(created_at: :desc)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
