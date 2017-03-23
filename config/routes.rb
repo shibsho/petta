@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   
-  get '/search/:category_id' => 'home#search', as: 'category'
+  get '/category' => 'home#category', as: 'category'
 
   get '/about' => 'home#about'
 

@@ -7,22 +7,21 @@
 <%= render 'notes'%>
 
 <div style=" clear:both;" class= "category-area">
-
-	<% @categories.each do |category| #category_titleにカテゴリー名を順番に入れる　%>
-		<div style="height:400px;">
-			<% if @user.notes.find_by(category: category.title) #ユーザーがそのカテゴリー名のデータを持っていた場合 %>
-				<p class="ctg-name"><%= category.title %></p>
-				<% notes = @user.notes.where(category: category.title) %>
-				<% notes.each do |note| #noteにNoteインスタンスを一つずつ代入 %>
-					<li>
-						<%= link_to note, class: "note-card" do %>
-							<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-							<div><%= note.content %></div>
-						<% end %>
-					</li>
-				<% end %>
+ <% @categories.each do |category| %>
+		<% if @user.notes.find_by(category: category.title) %>
+				<div style="height:400px;">
+					<p class="ctg-name"><%= category.title %></p>
+					<% notes = @user.notes.where(category: category.title) %>
+					<% notes.each do |note| %>                      
+						<li>
+							<%= link_to note, class: "note-card" do %>
+								<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
+								<div><%= note.content %></div>
+							<% end %>
+						</li>
+					<% end %>
+				</div>	
 			<% end %>
-		</div>	
 	<% end %>
 </div>
 	

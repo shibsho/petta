@@ -5,9 +5,9 @@ class HomeController < ApplicationController
   end
 
  #POST root
-  def search
-  	@category = params[:category]
-    @notes = Note.where(category: @category)
+  def category
+  	@category_title = params[:category]
+    @notes = Note.where(category: @category_title).order(created_at: :desc)
   end
 
  
