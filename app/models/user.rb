@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :notes, dependent: :destroy
   has_many :likes
   has_many :like_notes, through: :likes, source: :note
+
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "from_id", dependent: :destroy
+  has_many :following_users, through: :active_relationships, source: :target
 end

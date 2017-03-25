@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @notes = @user.notes.order(created_at: :desc)
+    @following_users = @user.following_users.order(created_at: :desc)
     @title = "Notes"
     @categories = Category.all
   end
