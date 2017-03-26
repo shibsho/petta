@@ -1,5 +1,23 @@
 <div class="profile-area">
 	<h1><%= link_to @user.name, @user, class: "name" %></h1>
+  <% if current_user != @user %>
+    <div>
+      <% if current_user.active_relationships.find_by(target_id: @user.id) %>
+        <%= link_to unfollow_path(@user.id), class: "follow-btn", method: :delete do %>
+          <p>フォロー解除</p>
+        <% end %>
+      <% else %>
+        <%= link_to follow_path(@user.id), class: "follow-btn", method: :post do %>
+          <p>フォローする</p>
+        <% end %>
+      <% end %>
+    </div>  
+　<% end %>
+  <div>
+    <%= link_to following_user_path(@user.id) do %>
+      フォロー：<%= @user.active_relationships.count %>
+    <% end %>
+  </div>
 	<div class="introduction-area"><%= @user.introduction %></div>
 	<div><%= link_to "#{@user.likes.count}個のお気に入り", like_notes_user_path(@user.id), class: "fav-link" %></div>
 	<div class="edit-prof-btn-container">

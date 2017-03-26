@@ -10,5 +10,8 @@ class User < ApplicationRecord
   has_many :like_notes, through: :likes, source: :note
 
   has_many :active_relationships, class_name: "Relationship", foreign_key: "from_id", dependent: :destroy
+   #フォローしている対象の集合体
   has_many :following_users, through: :active_relationships, source: :target
+   #フォロワーの集合体
+
 end
