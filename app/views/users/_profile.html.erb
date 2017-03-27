@@ -17,6 +17,9 @@
     <%= link_to following_user_path(@user.id) do %>
       フォロー：<%= @user.active_relationships.count %>
     <% end %>
+    <%= link_to follower_user_path(@user.id) do %>
+      フォロワー：<%= @user.passive_relationships.count %>
+    <% end %>
   </div>
 	<div class="introduction-area"><%= @user.introduction %></div>
 	<div><%= link_to "#{@user.likes.count}個のお気に入り", like_notes_user_path(@user.id), class: "fav-link" %></div>

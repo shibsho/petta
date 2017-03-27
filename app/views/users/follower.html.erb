@@ -1,0 +1,13 @@
+
+
+<%= render 'profile' %>
+
+<h1>フォロワー</h1>
+<div>
+  <% @followers.each do |follower| %>
+    <p><%= link_to follower.name, follower %></p>
+  <% end %>
+</div>
+
+
+
