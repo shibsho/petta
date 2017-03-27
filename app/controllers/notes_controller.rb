@@ -7,6 +7,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @comments = @note.comments
   end
 
   # GET /notes/new

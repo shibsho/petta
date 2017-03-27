@@ -19,7 +19,20 @@
       <%= image_tag "gray-heart.png" %>×<%= @note.likes.count %>
     <% end %>
   <% end %>
+</div>
+
+<div>
+  <% @comments.each do |comment| %>
+   <div><%= comment.content %><%= comment.user.name %></div>
+  <% end %>
 </div>  
+
+<div>
+  <%= form_tag comment_path(@note.id) do %> 
+    <%= text_field_tag 'content' %>
+    <input type="submit" value="コメントする" >
+  <% end %>
+</div>
       
 
 
