@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   post '/follow/:user_id' => 'follow#follow', as: 'follow'
   delete '/unfollow/:user_id' => 'follow#unfollow', as: 'unfollow'
 
-  post '/comment/:note_id' => 'comment#new', as: 'comment'
+  post '/comments/:id' => 'comments#create', as: 'comments'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

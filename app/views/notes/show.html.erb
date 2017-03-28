@@ -28,9 +28,13 @@
 </div>  
 
 <div>
-  <%= form_tag comment_path(@note.id) do %> 
-    <%= text_field_tag 'content' %>
-    <input type="submit" value="コメントする", data: { disable_with: "送信中..." } >
+ 
+</div>
+
+<div>
+  <%= form_for(@comment) do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit "post", data: { disable_with: '問い合わせ中...' } %>
   <% end %>
 </div>
       
