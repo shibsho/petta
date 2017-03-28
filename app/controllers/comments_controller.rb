@@ -8,8 +8,13 @@ class CommentsController < ApplicationController
 
     note = Note.find(params[:id])
     comment = current_user.comments.build(note_id: note.id)
-    comment = comment.update(comment_params)
-    redirect_to note
+    comment.content = params[:comment][:content]
+    comment.save
+    if comment.save
+      redirect_to note, notice: 'コメントを投稿しました！'
+    else
+      redirect_to note, notice: 'コメントを入力してください。'
+    end
   end
 
 end

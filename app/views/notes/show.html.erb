@@ -34,7 +34,7 @@
 <div>
   <%= form_for(@comment) do |f| %>
     <%= f.text_field :content %>
-    <%= f.submit "post", data: { disable_with: '問い合わせ中...' } %>
+    <%= f.submit "コメントする", data: { disable_with: '投稿中...' } %>
   <% end %>
 </div>
       
