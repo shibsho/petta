@@ -3,7 +3,7 @@
 <%= render 'profile' %>
 
 <div class="user-contents-area">
-  <h1>フォロー中のユーザー</h1>
+  <h1>フォロー</h1>
   <div>
     <% @following_users.each do |following| %>
       <p><%= link_to following.name, following %></p>

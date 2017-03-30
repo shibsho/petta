@@ -3,8 +3,7 @@
 
 
 <% if current_user == @user %>
-	<div class="user-contents-area">
-	  <h1>タイムライン</h1>
+	<div class="user-contents-area">		
 	  <% @following_notes.each do |note| %>
 	    <li>
 	      <%= link_to note, class: "note-card" do %>
@@ -18,26 +17,10 @@
 
 <% if current_user != @user %>
 
-	<%= render 'notes'%>
+	
+<%= render 'notes'%>
 
-	<div style=" clear:both;" class= "category-area">
-	 <% @categories.each do |category| %>
-			<% if @user.notes.find_by(category: category.title) %>
-				<div style="height:400px;">
-					<p class="ctg-name"><%= category.title %></p>
-					<% notes = @user.notes.where(category: category.title) %>
-					<% notes.each do |note| %>                      
-						<li>
-							<%= link_to note, class: "note-card" do %>
-								<%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-								<div><%= note.content %></div>
-							<% end %>
-						</li>
-					<% end %>
-				</div>	
-			<% end %>
-		<% end %>
-	</div>
+	
 		
 <% end %>
 

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @notes = @user.notes.order(created_at: :desc)
-    @title = "Notes"
+    @title = "投稿"
     @categories = Category.all
     @following_users = @user.following_users
     @following_notes = Note.where("user_id IN (?) OR user_id = ?", @user.following_users.map(&:id), @user.id).order(created_at: :desc)
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def notes
+    @title = "投稿"
     @notes = @user.notes.order(created_at: :desc)
   end
 
