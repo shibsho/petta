@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
 
-
-  def comment_params
-    params.require(:comment).permit(:content)
-  end
   def create
 
     note = Note.find(params[:id])
