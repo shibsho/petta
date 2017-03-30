@@ -3,9 +3,8 @@
 
 <% @notes.each  do |note| %>
   <li>
-    <%= link_to note, class: "note-card" do %>
+    <%= link_to note, class: "top-note-card" do %>
       <%= image_tag "/note_images/#{note.image}", class: "note-image" %>
-      <div class="note-category"><%= note.category %></div>
     <% end %>
   </li>
 <% end %>

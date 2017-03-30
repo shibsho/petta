@@ -1,12 +1,14 @@
-<p id="notice"><%= notice %></p>
+
 
 <%= render 'profile' %>
 
-<h1>フォロー中のユーザー</h1>
-<div>
-  <% @following_users.each do |following| %>
-    <p><%= link_to following.name, following %></p>
-  <% end %>
+<div class="user-contents-area">
+  <h1>フォロー中のユーザー</h1>
+  <div>
+    <% @following_users.each do |following| %>
+      <p><%= link_to following.name, following %></p>
+    <% end %>
+  </div>
 </div>
 
 
