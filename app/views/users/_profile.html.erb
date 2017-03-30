@@ -8,18 +8,27 @@
         <% end %>
       <% else %>
         <%= link_to follow_path(@user.id), class: "follow-btn", method: :post do %>
-          <p>フォローする</p>
+          <p>フォロー</p>
         <% end %>
       <% end %>
     </div>  
 　<% end %>
   <div>
+    <li>
+    <%= link_to notes_user_path(@user.id) do %>
+      投稿：<%= @user.notes.count %>
+    <% end %>
+    </li>
+    <li>
     <%= link_to following_user_path(@user.id) do %>
       フォロー：<%= @user.active_relationships.count %>
     <% end %>
+    </li>
+    <li>
     <%= link_to follower_user_path(@user.id) do %>
       フォロワー：<%= @user.passive_relationships.count %>
     <% end %>
+    </li>
   </div>
 	<div class="introduction-area"><%= @user.introduction %></div>
 	<div><%= link_to "#{@user.likes.count}個のお気に入り", like_notes_user_path(@user.id), class: "fav-link" %></div>
